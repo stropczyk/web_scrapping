@@ -1,44 +1,53 @@
 {% extends "layout.html" %}
 {% block content %}
-<span class="title2">Results</span>
-<div class="dotted-line"></div>
-<div class="title">Best value:</div>
-<article>
-    <p>
-        <a href="{{ product1.link }}">
-            <img class="product-image" src="{{ product1.item_image }}" height="150">
-        </a>
-        <br>
-        <span>{{ product1.item_name }}</span>
-        <br>
-        <span>{{ product1.item_price }}</span>
-    </p>
-</article>
-<div class="dotted-line"></div>
-<div class="title">Medium value:</div>
-<article>
-    <p>
-        <a href="{{ product2.link }}">
-            <img class="product-image" src="{{ product2.item_image }}" height="150">
-        </a>
-        <br>
-        <span>{{ product2.item_name }}</span>
-        <br>
-        <span>{{ product2.item_price }}</span>
-    </p>
-</article>
-<div class="dotted-line"></div>
-<div class="title">Worst value:</div>
-<article>
-    <p>
-        <a href="{{ product3.link }}">
-            <img class="product-image" src="{{ product3.item_image }}" height="150">
-        </a>
-        <br>
-        <span>{{ product3.item_name }}</span>
-        <br>
-        <span>{{ product3.item_price }}</span>
-    </p>
-</article>
-<div class="dotted-line"></div>
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Results</h1>
+  <p class="lead">We present the best offers from our partner stores.</p>
+</div>
+
+<div class="container">
+  <div class="card-deck mb-3 text-center">
+    <div class="card mb-4 box-shadow">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">morele.net</h4>
+      </div>
+      <div class="card-body">
+        <h2 class="card-title pricing-card-title">{{ morele.item_name }}</h2>
+        <h1 class="card-title pricing-card-title">PLN {{ morele.item_price }}</h1>
+        <img src="{{ morele.item_image }}" alt="morele product" class="img-thumbnail mt-3 mb-4">
+        <button type="button" class="btn btn-lg btn-block btn-success">
+            <a class="text-light" href="{{ morele.link }}">Buy</a>
+        </button>
+      </div>
+    </div>
+
+    <div class="card mb-4 box-shadow">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">X-kom</h4>
+      </div>
+      <div class="card-body">
+        <h2 class="card-title pricing-card-title">{{ xkom.item_name }}</h2>
+        <h1 class="card-title pricing-card-title">PLN {{ xkom.item_price }}</h1>
+        <img src="{{ xkom.item_image }}" alt="morele product" class="img-thumbnail mt-3 mb-4">
+        <button type="button" class="btn btn-lg btn-block btn-success">
+            <a class="text-light" href="{{ xkom.link }}">Buy</a>
+        </button>
+      </div>
+    </div>
+
+    <div class="card mb-4 box-shadow">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Komputronik</h4>
+      </div>
+      <div class="card-body">
+        <h2 class="card-title pricing-card-title">{{ komputronik.item_name }}</h2>
+        <h1 class="card-title pricing-card-title">PLN {{ komputronik.item_price }}</h1>
+        <img src="{{ komputronik.item_image }}" alt="morele product" class="img-thumbnail mt-3 mb-4">
+        <button type="button" class="btn btn-lg btn-block btn-success">
+            <a class="text-light" href="{{ komputronik.link }}">Buy</a>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock content %}

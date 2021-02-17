@@ -24,8 +24,8 @@ def home():
         medium_value = get_product(medium_price, sorted_list)
         worst_value = sorted_list[-1]
 
-        return render_template('results.html', title='Results', product1=best_value,
-                               product2=medium_value, product3=worst_value)
+        return render_template('results.html', title='Results', morele=best_value,
+                               xkom=medium_value, komputronik=worst_value)
 
     return render_template('home.html', title='Home')
 
