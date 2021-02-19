@@ -29,7 +29,7 @@
           type="text/css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm align-items-center p-3 px-md-4 mb-3 bg-light border-bottom box-shadow">
+    <nav class="navbar navbar-expand-sm align-items-center p-3 px-md-4 mb-3 bg-light border-bottom box-shadow fixed-top">
       <h5 class="navbar-brand my-0 md-auto font-weight-normal">WebScrappingApp</h5>
       <ul class="navbar-nav ms-auto my-2 my-md-0 md-3">
         <a class="p-2 text-dark" href="{{ url_for('main.home') }}">Home</a>
@@ -37,7 +37,7 @@
         <a class="p-2 text-dark" href="{{ url_for('main.contact') }}">Contact</a>
       </ul>
     </nav>
-    <div class="container vh-100">
+    <div class="container min-vh-100 mt-5">
         {% block content %}{% endblock %}
     </div>
     <footer class="pt-4 pt-md-5 bg-light border-top box-shadow">
@@ -58,11 +58,11 @@
                     </h5>
                 </div>
                 <div class="col-6 col-md text-center">
-                    <h5>Partners</h5>
+                    <h5>Partner</h5>
                     <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="https://www.morele.net/" target="_blank">morele.net</a></li>
-                        <li><a class="text-muted" href="https://www.x-kom.pl/" target="_blank">X-kom</a></li>
-                        <li><a class="text-muted" href="https://www.komputronik.pl/" target="_blank">Komputronik</a></li>
+<!--                        <li><a class="text-muted" href="https://www.morele.net/" target="_blank">morele.net</a></li>-->
+<!--                        <li><a class="text-muted" href="https://www.x-kom.pl/" target="_blank">X-kom</a></li>-->
+                        <li><a class="text-muted" href="https://www.komputronik.pl/" target="_blank">Komputronik.pl</a></li>
                     </ul>
                 </div>
             </div>

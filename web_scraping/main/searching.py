@@ -58,6 +58,10 @@ def komputronik(phrase):
 
     komputronik_products = []
     stage_1 = komputronik_soup.find('ul', class_='product-entry2-wrap')
+
+    if stage_1 is None:
+        return None
+
     stage_2 = stage_1.find_all('li', class_='product-entry2')
 
     for item in stage_2:

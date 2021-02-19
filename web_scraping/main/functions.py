@@ -15,8 +15,8 @@ def change_string_to_int_2(string):
     c = b.replace(',', '.')
     d = c.encode('utf-8')
     e = d.replace(b'\xc2\xa0', b'')
-    f = float(e.decode('utf-8'))
-    return f
+    output = float(e.decode('utf-8'))
+    return output
 
 
 def get_product(price, database):

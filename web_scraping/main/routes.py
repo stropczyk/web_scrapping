@@ -13,19 +13,27 @@ def home():
         user_input = request.form['product']
         phrase = user_input.split(' ')
 
-        morele_products = morele_net(phrase)
-        x_kom_products = x_kom(phrase)
+        # morele_products = morele_net(phrase)
+        # morele_sorted = sorted(morele_products, key=lambda i: i['item_price'])
+        # morele_item = morele_sorted[0]
+
+        # xkom_products = x_kom(phrase)
+        # xkom_sorted = sorted(xkom_products, key=lambda i: i['item_price'])
+        # xkom_item = xkom_sorted[0]
+
         komputronik_products = komputronik(phrase)
 
-        products = morele_products + x_kom_products + komputronik_products
-        sorted_list = sorted(products, key=lambda i: i['item_price'])
-        best_value = sorted_list[0]
-        medium_price = median_low(i['item_price'] for i in sorted_list)
-        medium_value = get_product(medium_price, sorted_list)
-        worst_value = sorted_list[-1]
+        if komputronik_products is None:
+            return render_template('no-product.html', title='No such product')
 
-        return render_template('results.html', title='Results', morele=best_value,
-                               xkom=medium_value, komputronik=worst_value)
+        komputronik_sorted = sorted(komputronik_products, key=lambda i: i['item_price'])
+
+        item_1 = komputronik_sorted[0]
+        item_2 = komputronik_sorted[1]
+        item_3 = komputronik_sorted[2]
+
+        return render_template('results.html', title='Results', item3=item_3,
+                               item2=item_2, item1=item_1)
 
     return render_template('home.html', title='Home')
 
