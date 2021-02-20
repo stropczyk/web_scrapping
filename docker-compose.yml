@@ -3,6 +3,7 @@ version: '3.7'
 services:
   web_scraping:
     container_name: web_scraping
+    image: webscrapping
     build: .
     ports:
       - "5000:5000"
