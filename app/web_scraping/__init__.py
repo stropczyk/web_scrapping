@@ -13,7 +13,7 @@ app.register_blueprint(errors)
 def create_app():
     app = Flask(__name__)
 
-    from web_scraping.main.routes import main
+    from app.web_scraping.main.routes import main
     app.register_blueprint(main)
 
     return app

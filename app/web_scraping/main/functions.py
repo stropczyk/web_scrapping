@@ -6,6 +6,7 @@ def change_string_to_int(string):
         if not i.isalpha():
             z.append(i)
     output = float(''.join(z))
+
     return output
 
 
@@ -16,6 +17,7 @@ def change_string_to_int_2(string):
     d = c.encode('utf-8')
     e = d.replace(b'\xc2\xa0', b'')
     output = float(e.decode('utf-8'))
+
     return output
 
 

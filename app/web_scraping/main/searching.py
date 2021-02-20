@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
-from web_scraping.main.functions import change_string_to_int, change_string_to_int_2
+from .functions import change_string_to_int, change_string_to_int_2
 
 
 # code for first page

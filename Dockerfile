@@ -1,24 +1,11 @@
-FROM python:slim
+FROM tiangolo/meinheld-gunicorn-flask:python3.8
+ADD ./app /app
+COPY requirements.txt /app
+WORKDIR /app
 
-#LABEL maintainer='stropczyk'
-
-WORKDIR /web_scraping
-
-COPY . .
-
-#ENV FLASK_APP run.py
-#
-#ENV FLASK_RUN_HOST 0.0.0.0
-
-#RUN apk add --no-cache gcc musl-dev linux-headers
-
-RUN python -m pip install --upgrade pip
-
-#COPY requirements.txt requirements.txt
+# Install dependencies:
+RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-#COPY . .
-
 EXPOSE 5000
-
-CMD [ "python", "run.py" ]
+ENTRYPOINT [ "python3", "main.py" ]

@@ -1,7 +1,5 @@
 from flask import render_template, request, Blueprint
-from web_scraping.main.searching import morele_net, x_kom, komputronik
-from web_scraping.main.functions import get_product
-from statistics import median_low
+from .searching import komputronik
 
 main = Blueprint('main', __name__)
 
@@ -23,14 +21,16 @@ def home():
 
         komputronik_products = komputronik(phrase)
 
-        if komputronik_products is None:
+        all_products = komputronik_products
+
+        if all_products is None:
             return render_template('no-product.html', title='No such product')
 
-        komputronik_sorted = sorted(komputronik_products, key=lambda i: i['item_price'])
+        all_sorted = sorted(all_products, key=lambda i: i['item_price'])
 
-        item_1 = komputronik_sorted[0]
-        item_2 = komputronik_sorted[1]
-        item_3 = komputronik_sorted[2]
+        item_1 = all_sorted[0]
+        item_2 = all_sorted[1]
+        item_3 = all_sorted[2]
 
         return render_template('results.html', title='Results', item3=item_3,
                                item2=item_2, item1=item_1)
